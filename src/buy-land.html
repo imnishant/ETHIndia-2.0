@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Buy Assets</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        landABI = [
+{
+"constant": true,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "account",
+"type": "address"
+}
+],
+"name": "balanceOf",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "approve",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalSupply",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "sender",
+"type": "address"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transferFrom",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "addedValue",
+"type": "uint256"
+}
+],
+"name": "increaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "assetType",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "area",
+"outputs": [
+{
+"name": "",
+"type": "uint8"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "withdraw",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerName",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "address"
+}
+],
+"name": "_balances",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerAddress",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "subtractedValue",
+"type": "uint256"
+}
+],
+"name": "decreaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transfer",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalPrice",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "id",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "_owner",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "owner",
+"type": "address"
+},
+{
+"name": "spender",
+"type": "address"
+}
+],
+"name": "allowance",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_total",
+"type": "uint256"
+}
+],
+"name": "setTotalSupply",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_parentAddress",
+"type": "address"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "from",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "to",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Transfer",
+"type": "event"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "owner",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "spender",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Approval",
+"type": "event"
+}
+]  
+        factABI = [
+{
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"name": "createChildLandCoin",
+"outputs": [
+{
+"name": "lc",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+}
+]
+
+        if (window.web3) {
+            metamaskWeb3 = new Web3(web3.currentProvider)
+        }
+        console.log('metamaskWeb3', metamaskWeb3)
+        let account = metamaskWeb3.eth.accounts
+        console.log('metamaskWeb3', account)
+
+        const factoryContractAddress = "0xCB3d5B34a01e16b6b6A85260fD5c3B07aD3bd3fF";
+        //const factoryContract = metamaskWeb3.eth.contract(factABI, factoryContractAddress)
+        const factoryContract = web3.eth.contract(factABI);
+        const contractInstance = factoryContract.at(factoryContractAddress);
+
+        function getChildLand() {
+            // CLearing the content of the table
+            var Parent = document.getElementById("123xyz");
+            while (Parent.hasChildNodes()) {
+                Parent.removeChild(Parent.firstChild);
+            }
+
+
+            var memory = contractInstance.getChildLandCoin((err, res) => {
+                //console.log('test', res, err)
+                var i;
+
+                var tableRef = document.getElementById("123xyz");
+                for (i = 0; i < res.length; i++) {
+                    function yadayada(i) {
+                        console.log("thisisi", i)
+                        var newRow = tableRef.insertRow();
+
+                        const eachLand = web3.eth.contract(landABI);
+                        const eachLandInstance = eachLand.at(res[i]);
+                        var newCellOne = newRow.insertCell(0);
+                        var newCellTwo = newRow.insertCell(1);
+
+                        var newCellThree = newRow.insertCell(2);
+                        var newCellFour = newRow.insertCell(3);
+                        var newCellFive = newRow.insertCell(4);
+                        var newCellSix = newRow.insertCell(5);
+                        var newCellEight = newRow.insertCell(6);
+
+                        var newTextOne;
+                        var newTextTwo;
+                        var newTextThree;
+                        var newTextFour;
+                        var newTextFive;
+                        var newTextSix;
+                        var newTextEight;
+                        var contractID;
+                        var tokenPrice;
+
+                        //Owner Name
+                        eachLandInstance.ownerName((err, res1) => {
+                            newTextOne = document.createTextNode(res1);
+                            newCellOne.appendChild(newTextOne);
+                        });
+
+                        //ID
+                        eachLandInstance.id((err, res2) => {
+                            // var tableRef = document.getElementById("123xyz");
+                            newTextTwo = document.createTextNode(res2);
+                            console.log(res2);
+                            contractID = res2;
+                            newCellTwo.appendChild(newTextTwo);
+
+                        });
+
+                        //Asses Type
+                        eachLandInstance.assetType((err, res3) => {
+                            console.log(res);
+                            newTextThree = document.createTextNode(res3);
+                            newCellThree.appendChild(newTextThree);
+
+                        });
+
+
+                        //Area
+                        eachLandInstance.area((err, res) => {
+                            console.log(res);
+                            newTextFour = document.createTextNode("area");
+                            newCellFour.appendChild(newTextFour);
+
+                        });
+
+
+                        //Total Supply
+                        eachLandInstance.totalSupply((err, res5) => {
+                            console.log(res);
+                            newTextFive = document.createTextNode(res5);
+                            newCellFive.appendChild(newTextFive);
+
+                        });
+
+
+                        //Price per token
+                        /*eachLandInstance.getTotalPrice((err, res6) => {
+                            console.log(res);
+                            newTextSix = document.createTextNode(res6);
+                            newCellSix.appendChild(newTextSix);
+                            tokenPrice = res6;
+
+                        });*/
+
+                        // var x = document.createElement("form");
+                        // x.setAttribute("method", "POST")
+                        // x.setAttribute("action", "#")
+
+                        // Quantity
+                        // var input = document.createElement('input');
+                        // input.setAttribute("type", "text");
+                        // input.setAttribute("name", "0");
+                        // console.log(input.value)
+
+                        //x.appendChild(input);
+
+                        var button = document.createElement('button');
+                        button.setAttribute("type", "submit");
+                        button.setAttribute("value", "BUy");
+                        button.innerHTML = " Buy "
+
+
+                        // newCellSeven.appendChild(input);
+                        // newCellEight.appendChild(button);
+                        // console.log(input.value)
+
+                        // x.appendChild(button);
+                        // x.onclick = function() {
+                        //     console.log("sfds")
+                        // };
+
+                        var button = document.createElement('button');
+                        button.innerHTML = " Buy "
+                        newCellEight.appendChild(button);
+
+                        button.addEventListener("click", function() {
+                            var totalPrice = 10 * tokenPrice;
+                            eachLandInstance.transfer(contractID, '0xac7FA16Bdcb3E31904394E4F03c77a9572E1bFfa'
+,2, function(err, res){
+                            
+                            });
+                        });
+                    }
+                    yadayada(i)
+                }
+
+            });
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+
+                    </div>
+                </div>
+                <div class="header-right">
+
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a href="./index.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-label">Functionalities</li>
+                    <li>
+                        <a href="sell-land.html" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Sell</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a onclick="getChildLand()" aria-expanded="false" href="javascript:void(0);">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Buy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+
+        <div class="content-body">
+
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h1>Lists of Available Assets</h1>
+                                <hr>
+                                <br />
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered zero-configuration">
+                                        <thead>
+                                            <tr>
+                                                <th>Owner</th>
+                                                <th>Name</th>
+                                                <th>Type</th>
+                                                <th>Area</th>
+                                                <th>No of Token Available</th>
+                                                <th>Price per Token</th>
+                                                <th>Select</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="123xyz">
+
+
+
+                                        </tbody>
+                                        <tfoot>
+
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+    
+                                    <h1>CheckOut with Details</h1>
+                                    <hr>
+                                    <br />
+    
+    
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by team Assassins@Pochinki 2019</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <script src="./plugins/tables/js/jquery.dataTables.min.js"></script>
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+    <script>
+        $('.form-valide').on('submit', function () {
+            alert('You submitted the form!');
+            $('#val-owner').val();
+            console.log('test val', $('#val-owner').val())
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sell Your Asset</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">  
+    <!-- <script src="https://app.tor.us/v0.0.20/embed.min.js"
+        integrity="sha384-tDTJ86ig+B5z7vXffrWKaBLC8dOCtiSV4a6OjWboyxfvcFNyL9Udxcld4kj1Wxny"
+        crossorigin="anonymous"></script>
+    
+        <script>
+                function delay(){
+                    setTimeout(() => {
+                        console.log("delay");
+                    },2000);
+                }
+        
+                delay();
+            </script>
+     -->
+    <script>
+
+        landABI = [
+{
+"constant": true,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "account",
+"type": "address"
+}
+],
+"name": "balanceOf",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "approve",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalSupply",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "sender",
+"type": "address"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transferFrom",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "addedValue",
+"type": "uint256"
+}
+],
+"name": "increaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "assetType",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "area",
+"outputs": [
+{
+"name": "",
+"type": "uint8"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "withdraw",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerName",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "",
+"type": "string"
+},
+{
+"name": "",
+"type": "address"
+}
+],
+"name": "_balances",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "ownerAddress",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "spender",
+"type": "address"
+},
+{
+"name": "subtractedValue",
+"type": "uint256"
+}
+],
+"name": "decreaseAllowance",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "recipient",
+"type": "address"
+},
+{
+"name": "amount",
+"type": "uint256"
+}
+],
+"name": "transfer",
+"outputs": [
+{
+"name": "",
+"type": "bool"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "totalPrice",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "id",
+"outputs": [
+{
+"name": "",
+"type": "string"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [],
+"name": "_owner",
+"outputs": [
+{
+"name": "",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": true,
+"inputs": [
+{
+"name": "owner",
+"type": "address"
+},
+{
+"name": "spender",
+"type": "address"
+}
+],
+"name": "allowance",
+"outputs": [
+{
+"name": "",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_total",
+"type": "uint256"
+}
+],
+"name": "setTotalSupply",
+"outputs": [],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+},
+{
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_parentAddress",
+"type": "address"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "constructor"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "from",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "to",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Transfer",
+"type": "event"
+},
+{
+"anonymous": false,
+"inputs": [
+{
+"indexed": true,
+"name": "owner",
+"type": "address"
+},
+{
+"indexed": true,
+"name": "spender",
+"type": "address"
+},
+{
+"indexed": false,
+"name": "value",
+"type": "uint256"
+}
+],
+"name": "Approval",
+"type": "event"
+}
+]
+        factABI = [
+{
+"constant": true,
+"inputs": [],
+"name": "getChildLandCoin",
+"outputs": [
+{
+"name": "",
+"type": "address[]"
+}
+],
+"payable": false,
+"stateMutability": "view",
+"type": "function"
+},
+{
+"constant": false,
+"inputs": [
+{
+"name": "_ownerName",
+"type": "string"
+},
+{
+"name": "_id",
+"type": "string"
+},
+{
+"name": "_assetType",
+"type": "string"
+},
+{
+"name": "_area",
+"type": "uint8"
+},
+{
+"name": "_noOfTokens",
+"type": "uint256"
+},
+{
+"name": "_totalPrice",
+"type": "uint256"
+}
+],
+"name": "createChildLandCoin",
+"outputs": [
+{
+"name": "lc",
+"type": "address"
+}
+],
+"payable": false,
+"stateMutability": "nonpayable",
+"type": "function"
+}
+]
+
+        if (window.ethereum) {
+            web3Provider = window.ethereum;
+            try {
+            // Request account access
+                window.ethereum.enable();
+            } catch (error) {
+            // User denied account access...
+            console.error("User denied account access")
+        }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+        web3Provider = window.web3.currentProvider;
+    }
+// If no injected web3 instance is detected, fall back to Ganache
+    else {
+        web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
+    }
+
+    web3 = new Web3(web3Provider);
+
+
+        const factoryContractAddress = "0xCB3d5B34a01e16b6b6A85260fD5c3B07aD3bd3fF";
+        //const factoryContract = web3.eth.contract(factABI, factoryContractAddress)
+        const factoryContract = web3.eth.contract(factABI);
+        const contractInstance = factoryContract.at(factoryContractAddress);
+
+
+        function createChildLand() {
+            const owner = document.getElementById('val-owner').value;
+            const id = document.getElementById('val-id').value;
+            const type = document.getElementById('val-type').value;
+            const area = document.getElementById('val-area').value;
+            const no_of_tokens = document.getElementById('val-no-of-tokens').value;
+            const total_price = document.getElementById('val-total-price').value;
+            console.log(web3.version.api);
+            console.log('test', owner, id, type, area, no_of_tokens);
+            console.log(contractInstance);
+            //const methodcall = factoryContract.createChildLandCoin.sendTransaction(owner, id, type, area, no_of_tokens);
+            var add = contractInstance.createChildLandCoin(owner, id, type, area, no_of_tokens, total_price, function (err, result) {
+                alert("SUCCESSFULLY DEPLOYED: ", "https://ropsten.etherscan.io/tx"+  result);
+            });
+            
+        }
+
+        function getChildLand() {
+            var memory = contractInstance.getChildLandCoin((err, res) => {
+                console.log('test', res, err)
+                var i;
+                for (i = 0; i < res.length; i++) {
+                    const eachLand = web3.eth.contract(landABI);
+                    const eachLandInstance = eachLand.at(res[i]);
+                    console.log(eachLandInstance.ownerName((err, res) => {
+                        console.log(res);
+                    }));
+                }
+
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+
+                    </div>
+                </div>
+                <div class="header-right">
+
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a href="./index.html" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-label">Functionalities</li>
+                    <li>
+                        <a href="sell-land.html" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Sell</span>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="buy-land.html" aria-expanded="false">
+                            <i class="icon-notebook menu-icon"></i><span class="nav-text">Buy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1>Sell your land</h1>
+                                <hr>
+
+                                <br />
+
+                                <div class="form-validation">
+                                    <form class="form-valide" action='sell-land.html' method="POST">
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-owner">Owner <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-owner" name="val-owner"
+                                                    placeholder="Enter the owner name">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-id">ID <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-id" name="val-id"
+                                                    placeholder="Enter the property id">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-type">Type <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-type" name="val-type"
+                                                    placeholder="Enter the property type">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-area">Area <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-area" name="val-area"
+                                                    placeholder="Enter the property area">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-no-of-tokens">Tokens <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-no-of-tokens"
+                                                    name="val-no-of-tokens" placeholder="Enter the number of tokens">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-total-price">Total Price
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-total-price"
+                                                    name="val-total-price" placeholder="Enter the property price">
+                                            </div>
+                                        </div>
+                                        <!--
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-value-of-token">Value of token <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-value-of-token" name="val-value-of-token" placeholder="Enter the value of each token">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-upload-file">Upload Document <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="file" class="form-control-file">
+                                            </div>
+                                        </div>
+                                        -->
+
+
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="button" value="submit" class="btn btn-primary"
+                                                    onclick="createChildLand()">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h1>Transaction Status</h1>
+                                <hr>
+
+                                <br />
+
+                                <div class="form-validation">
+                                    <form class="form-valide" action='sell-land.html' method="POST">
+
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-owner">Owner <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text" class="form-control" id="val-owner" name="val-owner"
+                                                    placeholder="Enter the owner name">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <div class="col-lg-8 ml-auto">
+                                                <button type="button" value="submit" class="btn btn-primary"
+                                                    onclick="createChildLand()">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed & Developed by team Assassins@Pochinki 2019</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+    <script src="./factoryABI.js"></script>
+
+    <script src="./plugins/validation/jquery.validate.min.js"></script>
+    <script src="./plugins/validation/jquery.validate-init.js"></script>
+    <script>
+        $('.form-valide').on('submit', function () {
+            alert('You submitted the form!');
+            $('#val-owner').val();
+            console.log('test val', $('#val-owner').val())
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+
+</script>
