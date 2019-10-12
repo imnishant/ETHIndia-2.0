@@ -16,6 +16,3 @@ contract Factory
         return childLandCoin;
     }
 }
-
-
-
